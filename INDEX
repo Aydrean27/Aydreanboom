@@ -43,3 +43,63 @@
 </body>
 
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device/width, initial/scale=1.0">
+   
+   <title>REEVA</title>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>REEVA</h1>
+
+<nav>
+
+<a href="#">Inicio</a>>
+<a href="#">Information</a>>
+<a href="#">Contact</a>>
+
+
+</nav>
+<main>
+<section>
+<h2>What is REEVA?</h2>
+<p>Is and style that wants to change...."
+
+
+Here we explain what problem REEVA solves.
+Contamination, ...</p>
+
+</section>
+
+
+<section>
+
+<h2>Who is REEVA for?</h2>
+
+<p>
+Here we explain who will use REEVA.
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<p>REEVA / 2026</p>
+
+</footer>
+</body>
+</html>
