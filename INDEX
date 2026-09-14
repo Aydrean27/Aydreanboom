@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale+1.0">
+    <title>ColLab</title>
+</head>
+<body>
+    <header>
+        <h1>ColLab</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Functions</a>
+        <a href="#">Login</a>
+    </nav>
+
+
+    <main>
+
+        <section class="hero-carrusel">
+
+            <div class="hero-contenido">
+                <h1>Learn Beyond The Classroom</h1>
+
+                <p>
+                    Connect with students, discover new ways to learn, and turn every challenge into an opportunity with ColLab
+                </p>
+            </div>
+           
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>ColLab - 2026</p>
+    </footer>
+
+</body>
+
+</html>
