@@ -1,56 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>REEVA</title>
-
-    <link rel="stylesheet" href="Style.css">
-
+    <title>REEVA - High Fashion Experience</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>REEVA</h1>
-        <p>Aprendiendo a crear aplicaciones desde cero</p>
+
+    <!-- Header con degradado en color negro -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none;"><h1>REEVA</h1></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="design-clothes.html">Design Clothes</a></li>
+                <li><a href="mission-vision.html">Misión & Visión</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="search.html" aria-label="Buscar" class="action-icon">🔍</a>
+            <a href="cart.html" aria-label="Carrito" class="action-icon">🛒</a>
+        </div>
     </header>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#proyecto">Mi proyecto</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+    <!-- Sección Principal / Hero Carrusel Estilo Carolina Herrera -->
+    <section id="inicio" class="hero-section">
+        <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-content">
+                <span class="sub-title">Sustainable Fashion</span>
+                <h2>Transform your forgotten clothes</h2>
+                <p>REEVA connects people, local talent, and sustainable fashion to give every garment a second life.</p>
+                <div class="hero-buttons">
+                    <a href="marketplace.html" class="btn-primary">Explore Marketplace</a>
+                    <a href="collections.html" class="btn-secondary">Collections Centers</a>
+                </div>
+            </div>
+        </div>
 
-    <main>
-        <section id="inicio" class="principal">
-            <h2>Bienvenidos</h2>
-            <p>
-                Esta aplicación fue creada utilizando HTML y CSS.
-            </p>
-            <button>Conocer más</button>
-        </section>
+        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-content">
+                <span class="sub-title">Spring / Upcycling Runway</span>
+                <h2>Redefining Urban Style</h2>
+                <p>Piezas únicas creadas a través de técnicas artesanales de patchwork y conciencia ambiental.</p>
+                <div class="hero-buttons">
+                    <a href="marketplace.html" class="btn-primary">Shop Now</a>
+                    <a href="design-clothes.html" class="btn-secondary">Discover</a>
+                </div>
+            </div>
+        </div>
 
-        <section id="proyecto" class="tarjetas">
-            <h2>Qué ofrecemos?</h2>
+        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80');">
+            <div class="hero-content">
+                <span class="sub-title">Conscious Generation</span>
+                <h2>Where Every Garment Tells a Story</h2>
+                <p>Un movimiento juvenil en Panamá impulsando la moda circular y el diseño de autor.</p>
+                <div class="hero-buttons">
+                    <a href="mission-vision.html" class="btn-primary">About REEVA</a>
+                </div>
+            </div>
+        </div>
 
-            <div class="tarjeta">
-                <h3>Innovación</h3>
-                <p>Creamos soluciones utilizando tecnología.</p>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Sección Interactiva de Categorías de Prendas (Zoom central) -->
+    <section class="runway-collection-section">
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterCategory('ready-to-wear')">READY TO WEAR</button>
+            <button class="tab-btn" onclick="filterCategory('makeup')">MAKEUP</button>
+            <button class="tab-btn" onclick="filterCategory('fragrances')">FRAGRANCES</button>
+            <button class="tab-btn" onclick="filterCategory('bags')">BAGS</button>
+            <button class="tab-btn" onclick="filterCategory('all')">ALL</button>
+        </div>
+
+        <div class="runway-gallery-container" id="galleryContainer">
+            <div class="runway-item" data-category="ready-to-wear">
+                <div class="item-card">
+                    <span class="runway-tag">RUNWAY STYLE</span>
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Prenda 1">
+                </div>
+                <h4 class="item-title">Strapless Dress With Calla Lily Brooch</h4>
+            </div>
+            <div class="runway-item" data-category="ready-to-wear">
+                <div class="item-card">
+                    <span class="runway-tag">RUNWAY STYLE</span>
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=600&q=80" alt="Prenda 2">
+                </div>
+                <h4 class="item-title">Draped Leopard Print Chiffon Dress</h4>
+            </div>
+            <div class="runway-item active-center" data-category="ready-to-wear">
+                <div class="item-card">
+                    <span class="runway-tag">RUNWAY STYLE</span>
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Prenda 3">
+                </div>
+                <h4 class="item-title">Puff Sleeve Jacket With Calla Lily Buttons</h4>
+            </div>
+            <div class="runway-item" data-category="ready-to-wear">
+                <div class="item-card">
+                    <span class="runway-tag">RUNWAY STYLE</span>
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80" alt="Prenda 4">
+                </div>
+                <h4 class="item-title">Gathered Maxi Skirt</h4>
+            </div>
+            <div class="runway-item" data-category="ready-to-wear">
+                <div class="item-card">
+                    <span class="runway-tag">RUNWAY STYLE</span>
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Prenda 5">
+                </div>
+                <h4 class="item-title">Strapless Drop-Waist Gown</h4>
             </div>
 
-            <div class="tarjeta">
-                <h3>Creatividad</h3>
-                <p>Transformamos ideas en proyectos.</p>
+            <div class="runway-item" data-category="makeup" style="display:none;">
+                <div class="item-card">
+                    <span class="runway-tag">BESTSELLER</span>
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Makeup 1">
+                </div>
+                <h4 class="item-title">Nude Couture Highlighter</h4>
             </div>
-
-            <div class="tarjeta">
-                <h3>Tecnología</h3>
-                <p>Utilizamos herramientas digitales.</p>
+            <div class="runway-item" data-category="fragrances" style="display:none;">
+                <div class="item-card">
+                    <span class="runway-tag">PARFUM</span>
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80" alt="Fragrance 1">
+                </div>
+                <h4 class="item-title">Bad Boy Elixir 100ml Eau De Parfum</h4>
             </div>
-        </section>
-    </main>
+            <div class="runway-item" data-category="bags" style="display:none;">
+                <div class="item-card">
+                    <span class="runway-tag">NEW COLLECTION</span>
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Bag 1">
+                </div>
+                <h4 class="item-title">Pats Leopard Jacquard Clutch</h4>
+            </div>
+        </div>
+    </section>
 
-    <footer id="contacto">
-        <p>© 2026 REEVA</p>
+    <!-- Sección Featured Stories -->
+    <section class="featured-stories-section">
+        <h3 class="section-heading-editorial">Featured Stories</h3>
+        <div class="stories-grid">
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Story 1">
+                <h4>La Bomba</h4>
+            </div>
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Story 2">
+                <h4>Good Girl & Bad Boy</h4>
+            </div>
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Story 3">
+                <h4>212 Fragrances</h4>
+            </div>
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=500&q=80" alt="Story 4">
+                <h4>Makeup Collection</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>REEVA</h4>
+                <p>REEVA conecta personas, diseñadores emergentes y moda sostenible para darle una segunda vida a cada prenda.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>contacto@reeva.pa</p>
+                <p>+507 8000-0000</p>
+                <p>Calle de la Innovación 123, Ciudad de Panamá</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">FB</a>
+                    <a href="#">X</a>
+                    <a href="#">IN</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 REEVA. Todos los derechos reservados.</p>
+            <p>Where Every Garment Tells a New Story.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
