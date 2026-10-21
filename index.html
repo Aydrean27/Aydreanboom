@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -65,10 +65,12 @@
             </div>
         </div>
 
-        <div class="carousel-dots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
+        <button class="carousel-control previous" type="button" aria-label="Diapositiva anterior" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="carousel-control next" type="button" aria-label="Diapositiva siguiente" onclick="changeSlide(1)">&#10095;</button>
+        <div class="carousel-dots" aria-label="Seleccionar diapositiva">
+            <button class="dot active" type="button" aria-label="Diapositiva 1" onclick="currentSlide(0)"></button>
+            <button class="dot" type="button" aria-label="Diapositiva 2" onclick="currentSlide(1)"></button>
+            <button class="dot" type="button" aria-label="Diapositiva 3" onclick="currentSlide(2)"></button>
         </div>
     </section>
 
@@ -195,11 +197,11 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
     <!-- Contenido de tu página web -->
     
     <!-- Conexión de JavaScript al final del body -->
-    <script src="script.js"></script>
+    <script src=".Js"></script>
 </body>
 </html>
+
+
