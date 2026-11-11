@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REEVA - High Fashion Experience</title>
-    <link rel="stylesheet" href="style.css">
+    <title>REEVA — Moda circular con actitud</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
@@ -15,30 +15,31 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="design-clothes.html">Design Clothes</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="design-clothes.html">Diseña</a></li>
                 <li><a href="mission-vision.html">Misión & Visión</a></li>
                 <li><a href="marketplace.html">Marketplace</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="#cuenta">Mi cuenta</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Sección Principal / Hero Carrusel Estilo Carolina Herrera -->
     <section id="inicio" class="hero-section">
-        <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1920&q=80');">
+        <div class="carousel-slide active" style="background-image: linear-gradient(90deg, rgba(37, 121, 155, 0.82), rgba(37, 121, 155, 0.18)), url('Img/modelo 1.jpg');">
             <div class="hero-content">
-                <span class="sub-title">Sustainable Fashion</span>
-                <h2>Were every garment tells a new story</h2>
-                <p>Connect with your clothes, try a new style, try REEVA.</p>
+                <span class="sub-title">MODA CIRCULAR · ESTILO SIN REGLAS</span>
+                <h2>Cada prenda merece otra historia</h2>
+                <p>Reimagina lo que ya existe. Viste algo único. Dale otra vuelta al ciclo.</p>
                 <div class="hero-buttons">
-                    <a href="marketplace.html" class="btn-primary">Explore Marketplace</a>
-                    <a href="collections.html" class="btn-secondary">Collections Centers</a>
+                    <a href="marketplace.html" class="btn-primary">Explora el marketplace</a>
+                    <a href="design-clothes.html" class="btn-secondary">Diseña tu estilo</a>
                 </div>
             </div>
         </div>
 
-        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1920&q=80');">
+        <div class="carousel-slide" style="background-image: linear-gradient(90deg, rgba(37, 121, 155, 0.82), rgba(37, 121, 155, 0.18)), url('Img/Mujer upcycling ropa de cuadritos.jpg');">
             <div class="hero-content">
                 <span class="sub-title">Spring / Upcycling Runway</span>
                 <h2>Redefining Urban Style</h2>
@@ -50,7 +51,7 @@
             </div>
         </div>
 
-        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80');">
+        <div class="carousel-slide" style="background-image: linear-gradient(90deg, rgba(37, 121, 155, 0.82), rgba(37, 121, 155, 0.18)), url('Img/REEVA (1).png');">
             <div class="hero-content">
                 <span class="sub-title">From Waste to Wear</span>
                 <h2>Lo que descartamos puede volver a vestirnos</h2>
@@ -70,49 +71,66 @@
         </div>
     </section>
 
+    <section id="cuenta" class="account-section">
+        <div class="account-card">
+            <span class="upcycle-kicker">TU ESPACIO REEVA</span>
+            <h2>Entra al <span>ciclo</span></h2>
+            <p>Guarda tus prendas favoritas y sigue creando una moda con más historia.</p>
+            <form class="account-form" onsubmit="event.preventDefault()">
+                <label for="account-user">Usuario o correo</label>
+                <input id="account-user" name="usuario" type="text" autocomplete="username" placeholder="Tu usuario" required>
+                <label for="account-password">Contraseña</label>
+                <input id="account-password" name="contrasena" type="password" autocomplete="current-password" placeholder="Tu contraseña" required>
+                <button class="btn-primary" type="submit">Ingresar</button>
+                <a href="#cuenta">¿Primera vez? Crea tu cuenta</a>
+            </form>
+        </div>
+        <div class="account-note"><span>01 / RE-IMAGINA</span><strong>Tu estilo<br>tiene otra vida.</strong><span>Hecho para volver a usarse ♻</span></div>
+    </section>
+
     <!-- Sección Interactiva de Categorías de Prendas (Zoom central) -->
     <section class="runway-collection-section">
         <div class="category-tabs">
-            <button class="tab-btn active" onclick="filterCategory('ready-to-wear')">READY TO WEAR</button>
-            <button class="tab-btn" onclick="filterCategory('makeup')">MAKEUP</button>
-            <button class="tab-btn" onclick="filterCategory('fragrances')">FRAGRANCES</button>
-            <button class="tab-btn" onclick="filterCategory('bags')">BAGS</button>
-            <button class="tab-btn" onclick="filterCategory('all')">ALL</button>
+            <button class="tab-btn active" onclick="filterCategory('ready-to-wear')">PRENDAS</button>
+            <button class="tab-btn" onclick="filterCategory('makeup')">RETRABAJO</button>
+            <button class="tab-btn" onclick="filterCategory('fragrances')">ACCESORIOS</button>
+            <button class="tab-btn" onclick="filterCategory('bags')">BOLSOS</button>
+            <button class="tab-btn" onclick="filterCategory('all')">TODO</button>
         </div>
 
         <div class="runway-gallery-container" id="galleryContainer">
             <div class="runway-item" data-category="ready-to-wear">
-                <div class="item-card">
+            <div class="item-card">
                     <span class="runway-tag">RUNWAY STYLE</span>
-                    <img src="img/modelo 1.jpg" alt="Prenda 1">
+                    <img src="Img/modelo 1.jpg" alt="Modelo con una creación REEVA upcycled">
                 </div>
                 <h4 class="item-title">Strapless Dress With Calla Lily Brooch</h4>
             </div>
             <div class="runway-item" data-category="ready-to-wear">
                 <div class="item-card">
                     <span class="runway-tag">RUNWAY STYLE</span>
-                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=600&q=80" alt="Prenda 2">
+                    <img src="Img/modelo 1.jpg" alt="Prenda 2">
                 </div>
                 <h4 class="item-title">Draped Leopard Print Chiffon Dress</h4>
             </div>
             <div class="runway-item active-center" data-category="ready-to-wear">
                 <div class="item-card">
                     <span class="runway-tag">RUNWAY STYLE</span>
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Prenda 3">
+                    <img src="Img/Mujer upcycling ropa de cuadritos.jpg" alt="Prenda 3">
                 </div>
                 <h4 class="item-title">Puff Sleeve Jacket With Calla Lily Buttons</h4>
             </div>
             <div class="runway-item" data-category="ready-to-wear">
                 <div class="item-card">
                     <span class="runway-tag">RUNWAY STYLE</span>
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80" alt="Prenda 4">
+                    <img src="Img/Mujer upcycling ropa de cuadritos.jpg" alt="Prenda 4">
                 </div>
                 <h4 class="item-title">Gathered Maxi Skirt</h4>
             </div>
             <div class="runway-item" data-category="ready-to-wear">
                 <div class="item-card">
                     <span class="runway-tag">RUNWAY STYLE</span>
-                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Prenda 5">
+                    <img src="Img/REEVA (1).png" alt="Prenda 5">
                 </div>
                 <h4 class="item-title">Strapless Drop-Waist Gown</h4>
             </div>
@@ -120,14 +138,14 @@
             <div class="runway-item" data-category="makeup" style="display:none;">
                 <div class="item-card">
                     <span class="runway-tag">BESTSELLER</span>
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Makeup 1">
+                    <img src="Img/modelo 1.jpg" alt="Makeup 1">
                 </div>
                 <h4 class="item-title">Nude Couture Highlighter</h4>
             </div>
             <div class="runway-item" data-category="fragrances" style="display:none;">
                 <div class="item-card">
                     <span class="runway-tag">PARFUM</span>
-                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80" alt="Fragrance 1">
+                    <img src="Img/Mujer upcycling ropa de cuadritos.jpg" alt="Fragrance 1">
                 </div>
                 <h4 class="item-title">Bad Boy Elixir 100ml Eau De Parfum</h4>
             </div>
@@ -146,19 +164,19 @@
         <h3 class="section-heading-editorial">Featured Stories</h3>
         <div class="stories-grid">
             <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Story 1">
+                <img src="Img/modelo 1.jpg" alt="Story 1">
                 <h4>La Bomba</h4>
             </div>
             <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Story 2">
+                <img src="Img/REEVA (1).png" alt="Story 2">
                 <h4>Good Girl & Bad Boy</h4>
             </div>
             <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Story 3">
+                <img src="Img/modelo 1.jpg" alt="Story 3">
                 <h4>212 Fragrances</h4>
             </div>
             <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=500&q=80" alt="Story 4">
+                <img src="Img/Mujer upcycling ropa de cuadritos.jpg" alt="Story 4">
                 <h4>Makeup Collection</h4>
             </div>
         </div>

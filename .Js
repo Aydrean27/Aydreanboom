@@ -129,3 +129,52 @@ iniciarCarrusel();
         item.style.display = categoria === 'all' || item.dataset.category === categoria ? '' : 'none';
     });
 }
+
+// Selector de idioma persistente para la navegación y las llamadas principales.
+(() => {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    let actions = header.querySelector('.header-actions');
+    if (!actions) {
+        actions = document.createElement('div');
+        actions.className = 'header-actions';
+        header.appendChild(actions);
+    }
+    const label = document.createElement('label');
+    label.className = 'language-control';
+    label.innerHTML = '<span aria-hidden="true">◎</span><span class="language-label">ES</span><select aria-label="Cambiar idioma"><option value="es">ES</option><option value="en">EN</option></select>';
+    actions.appendChild(label);
+    const translations = {
+        'Inicio': 'Home', 'Diseña': 'Design', 'Diseño': 'Design', 'Misión & Visión': 'Mission & Vision',
+        'Marketplace': 'Marketplace', 'Blog': 'Journal', 'Explorar Marketplace': 'Explore the marketplace',
+        'Descubre el upcycling': 'Discover upcycling', 'Visita el marketplace': 'Visit the marketplace',
+        'Conoce el diseño': 'Discover the design', 'Historias REEVA': 'REEVA stories',
+        'Diseña prendas que cuentan historias': 'Design garments that tell stories',
+        'Marketplace REEVA': 'REEVA marketplace'
+    };
+    const nodes = Array.from(document.querySelectorAll('.main-nav a, .hero-content .sub-title, .hero-content h2, .hero-content p, .hero-buttons a, main > .sub-title, main > h2, .section-heading-editorial'));
+    const originals = new Map(nodes.map(node => [node, node.textContent.trim()]));
+    const select = label.querySelector('select');
+    function setLanguage(language) {
+        document.documentElement.lang = language;
+        nodes.forEach(node => {
+            const spanish = originals.get(node);
+            node.textContent = language === 'en' ? (translations[spanish] || spanish) : spanish;
+        });
+        label.querySelector('.language-label').textContent = language.toUpperCase();
+        localStorage.setItem('reeva-language', language);
+    }
+    select.value = localStorage.getItem('reeva-language') || 'es';
+    select.addEventListener('change', () => setLanguage(select.value));
+    setLanguage(select.value);
+})();
+
+// Entrada progresiva de las tarjetas, respetando la preferencia de movimiento reducido.
+(() => {
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cards = document.querySelectorAll('.story-card, .subpage-card, .environmental-metrics article, .partners-grid article');
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    cards.forEach(card => { card.classList.add('reveal-on-scroll'); observer.observe(card); });
+})();
