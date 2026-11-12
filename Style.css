@@ -867,3 +867,96 @@ body { color:var(--color-ink); background:#fffdf8; }
 .site-footer { background:var(--color-primary-blue); }
 .footer-col h4 { color:var(--color-crema); }
 @media(max-width:760px) { .account-section { grid-template-columns:1fr; } .account-card { width:100%; margin:auto; } .account-note { border-radius:28px 72px 28px 72px; } }
+
+/* REEVA responsive and accessible finishing layer */
+:root {
+  color-scheme: light;
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
+body { overflow-x: clip; }
+.site-header {
+  min-height: 76px;
+  transition: transform .28s ease, background-color .28s ease;
+}
+.site-header.oculto { transform: translateY(-110%); }
+.site-header a, .site-footer a { transition: color .2s ease, opacity .2s ease; }
+.site-header a:focus-visible, .site-footer a:focus-visible,
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #a34b32;
+  outline-offset: 3px;
+}
+.hero-section { isolation: isolate; }
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(13,30,32,.66), rgba(13,30,32,.18) 78%);
+  pointer-events: none;
+}
+.hero-content { position: relative; }
+.carousel-control, .dot, .tab-btn { cursor: pointer; }
+.carousel-control { border: 0; }
+.category-tabs { display: flex; justify-content: center; align-items: center; }
+.runway-gallery-container { scrollbar-width: thin; }
+.runway-item[hidden] { display: none !important; }
+.item-card, .story-card, .subpage-card, .partners-grid article {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.account-section { min-width: 0; }
+.account-card { width: min(100%, 480px); }
+.account-form input { min-height: 48px; }
+.account-form [data-account-status] {
+  margin: .5rem 0 0;
+  padding: .8rem 1rem;
+  border-left: 3px solid var(--color-primary-blue);
+  background: #edf4f4;
+  color: #234453;
+  font-size: .92rem;
+}
+.subpage-section, .reference-section { scroll-margin-top: 7rem; }
+.reveal-on-scroll { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+.reveal-on-scroll.is-visible { opacity: 1; transform: none; }
+@media (hover: hover) {
+  .main-nav a:hover, .site-footer a:hover { opacity: .76; }
+  .item-card:hover, .story-card:hover, .subpage-card:hover { transform: translateY(-4px); }
+}
+@media (max-width: 760px) {
+  .site-header { position: sticky; top: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1rem; padding: .65rem 1rem; }
+  .logo-container { order: 0; }
+  .logo-container h1 { font-size: 1.5rem; }
+  .main-nav { order: 2; width: 100%; overflow-x: auto; }
+  .main-nav ul { width: max-content; min-width: 100%; justify-content: center; gap: .65rem 1rem; }
+  .main-nav a { white-space: nowrap; font-size: .62rem; letter-spacing: .07em; }
+  .header-actions { order: 1; margin-left: auto; }
+  .hero-section { min-height: 620px; height: calc(88svh - 70px); }
+  .hero-content { width: min(100% - 2rem, 700px); }
+  .hero-buttons { flex-wrap: wrap; }
+  .account-section { grid-template-columns: minmax(0,1fr); }
+  .account-note { min-width: 0; }
+  .subpage-grid, .environmental-metrics, .partners-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .runway-gallery-container { max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .main-nav ul { justify-content: flex-start; }
+  .hero-content h2 { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+  .btn-primary, .btn-secondary { max-width: 100%; text-align: center; }
+  .subpage-grid, .environmental-metrics, .partners-grid, .footer-grid { grid-template-columns: minmax(0,1fr); }
+  .impact-overview { grid-template-columns: 1fr; }
+  .landfill-overlay { padding: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal-on-scroll { opacity: 1; transform: none; }
+}
+/* REEVA responsive and accessible finishing layer */
+:root{color-scheme:light;--page-gutter:clamp(1.25rem,5vw,5rem)}
+html{scroll-behavior:smooth;scroll-padding-top:8rem}body{overflow-x:clip}.site-header{min-height:76px;transition:transform .28s ease,background-color .28s ease}.site-header.oculto{transform:translateY(-110%)}
+.site-header a:focus-visible,.site-footer a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a34b32;outline-offset:3px}.hero-section{isolation:isolate}.carousel-slide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,30,32,.66),rgba(13,30,32,.18) 78%);pointer-events:none}.hero-content{position:relative}
+.carousel-control,.dot,.tab-btn{cursor:pointer}.carousel-control{border:0}.category-tabs{display:flex;justify-content:center;align-items:center}.runway-gallery-container{scrollbar-width:thin}.runway-item[hidden]{display:none!important}
+.item-card,.story-card,.subpage-card,.partners-grid article{transition:transform .3s ease,box-shadow .3s ease}.account-section{min-width:0}.account-card{width:min(100%,480px)}.account-form input{min-height:48px}.account-form [data-account-status]{margin:.5rem 0 0;padding:.8rem 1rem;border-left:3px solid var(--color-primary-blue);background:#edf4f4;color:#234453;font-size:.92rem}.subpage-section,.reference-section{scroll-margin-top:7rem}
+.reveal-on-scroll{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}.reveal-on-scroll.is-visible{opacity:1;transform:none}
+@media(hover:hover){.main-nav a:hover,.site-footer a:hover{opacity:.76}.item-card:hover,.story-card:hover,.subpage-card:hover{transform:translateY(-4px)}}
+@media(max-width:760px){.site-header{position:sticky;top:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1rem;padding:.65rem 1rem}.logo-container{order:0}.logo-container h1{font-size:1.5rem}.main-nav{order:2;width:100%;overflow-x:auto}.main-nav ul{width:max-content;min-width:100%;justify-content:center;gap:.65rem 1rem}.main-nav a{white-space:nowrap;font-size:.62rem;letter-spacing:.07em}.header-actions{order:1;margin-left:auto}.hero-section{min-height:620px;height:calc(88svh - 70px)}.hero-content{width:min(100% - 2rem,700px)}.hero-buttons{flex-wrap:wrap}.account-section{grid-template-columns:minmax(0,1fr)}.account-note{min-width:0}.subpage-grid,.environmental-metrics,.partners-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.runway-gallery-container{max-width:100%}}
+@media(max-width:520px){.main-nav ul{justify-content:flex-start}.hero-content h2{font-size:clamp(2.2rem,10vw,3.2rem)}.btn-primary,.btn-secondary{max-width:100%;text-align:center}.subpage-grid,.environmental-metrics,.partners-grid,.footer-grid{grid-template-columns:minmax(0,1fr)}.impact-overview{grid-template-columns:1fr}.landfill-overlay{padding:1.5rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal-on-scroll{opacity:1;transform:none}}
